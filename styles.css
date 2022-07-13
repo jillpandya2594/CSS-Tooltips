@@ -1,0 +1,51 @@
+.avatar{
+	display:flex;
+	justify-content:center;
+align-self: center;
+	
+	min-height: 50vh;
+	margin:0 auto;
+	margin-top:15%;
+	}
+.avatar{
+background-image :url("/home/kush/web development/Pictures/natureimg1.jpeg");
+	
+width:100px;
+height:100px;
+	background-size: cover;
+	background-position:center;
+	background-repeat:no-repeat;
+	
+	  
+	position:relative;
+
+}
+.avatar::after,
+.avatar::before{
+position:absolute;
+--scale:0;
+top:-.25rem;
+left:50%;
+
+transform:translateX(-50%) translateY(-100%) scale(var(--scale));
+transition: 50ms transform;
+}
+.avatar::before
+{
+	color:white;
+	content:attr(data-tooltip);
+	width:max-content;
+	border-radius:.3rem;
+	text-align:center;
+	max-width:100%;
+padding: .40rem;
+background:#333;
+
+
+
+
+
+}
+.avatar:hover::before{
+--scale:1;
+	}
